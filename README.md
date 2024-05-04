@@ -40,5 +40,11 @@ python openai_manager.py --delete-thread=THREAD_ID
 
 Replace `THREAD_ID` with the actual ID of the thread you want to delete.
 
+### Run Streamlit App
+To run the Streamlit app, navigate to the directory containing your Streamlit script (assuming it's named app.py) and execute the following command:
+```bash
+streamlit run app.py
+```
+
 ## Note
 Ensure that the environment variable for the OpenAI API key is set each time in the terminal session where you are running the script.
