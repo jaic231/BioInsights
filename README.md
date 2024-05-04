@@ -6,7 +6,7 @@
 ### 1. Install Requirements
 First, ensure that Python 3 is installed on your machine. Then, install the required Python packages by running the following command:
 ```bash
-pip install -r requirements.txt
+pip install --upgrade -r requirements.txt
 ```
 
 ### 2. Set Up OpenAI API Key
@@ -17,10 +17,10 @@ export OPENAI_API_KEY=YOUR_API_KEY
 
 ## Usage
 
-### Create an Assistant
-To create an assistant, run the script with the `--create-assistant` flag:
+### Create an Assistant and Thread
+To create an assistant and thread, run the script with the `--create-assistant` flag:
 ```bash
-python openai_manager.py --create-assistant
+python openai_manager.py --create-assistant --create-thread
 ```
 
 Make sure to copy the assistant and thread ids into your app.py file.
