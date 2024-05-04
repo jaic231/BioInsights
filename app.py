@@ -10,8 +10,8 @@ import shutil
 client = OpenAI()
 
 # Hardcoded assistant ID and thread ID
-assistant_id = "asst_klxsxcneEcEofgV9gOngKBvY"
-thread_id = "thread_SxMUUbds0d9edPudEU8ZwtXZ"
+assistant_id = ""
+thread_id = ""
 
 plot_container = None
 
