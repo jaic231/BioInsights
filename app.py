@@ -9,9 +9,12 @@ import shutil
 
 client = OpenAI()
 
-# Hardcoded assistant ID and thread ID
-assistant_id = ""
-thread_id = ""
+# Load assistant ID and thread ID from separate files
+with open("assistant_id.txt", "r") as file:
+    assistant_id = file.read().strip()
+
+with open("thread_id.txt", "r") as file:
+    thread_id = file.read().strip()
 
 plot_container = None
 

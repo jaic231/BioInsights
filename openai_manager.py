@@ -37,7 +37,7 @@ def create_assistant(file_ids):
         }
       }
     )
-    return assistant.id
+    return assistant
 
 def create_thread():
     return client.beta.threads.create()
@@ -45,6 +45,10 @@ def create_thread():
 def delete_thread(thread_id):
     return client.beta.threads.delete(thread_id=thread_id)
 
+def save_id(id, filename):
+    with open(filename, "w") as file:
+        file.write(id)
+        
 def main():
     parser = argparse.ArgumentParser(description="Manage Assistants and Threads on OpenAI.")
     parser.add_argument("--create-assistant", action="store_true", help="Create a new assistant")
@@ -58,12 +62,14 @@ def main():
 
     if args.create_assistant:
         file_ids = upload_files()
-        assistant_id = create_assistant(file_ids)
-        print(f"Assistant created with ID: {assistant_id}")
+        assistant = create_assistant(file_ids)
+        save_id(assistant.id, "assistant_id.txt")
+        print(f"Assistant created with ID: {assistant.id}")
 
     if args.create_thread or (not args.create_assistant and not args.delete_thread):
         thread = create_thread()
-        print(f"Thread created with ID: {thread['id']}")
+        save_id(thread.id, "thread_id.txt")
+        print(f"Thread created with ID: {thread.id}")
 
 if __name__ == "__main__":
     main()
